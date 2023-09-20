@@ -1,0 +1,53 @@
+According to the requirments => 
+
+1 - Users should be able to create tasks with a title and description. 
+ => Yes user can create a task with title and description which can not be null (mandatory)
+
+2 - Users should be able to view a list of all tasks
+=> Yes, user can access all the tasks
+
+3 - Users should be able to mark tasks as completed.
+=> Yes user can mark the  mark tasks as completed. 
+
+
+4 - Users should be able to edit task details.
+=> Yes user can able to edit task details.
+
+5 - Users should be able to delete tasks.
+=> Yes user can able to delete tasks
+
+
+6 - Implement data persistence simple database like MySQL.
+=> I used mongodb as a database
+
+7 - Tasks should be stored and retrieved from the database.
+=> Yes , All the data will stored and retrieved from the database
+
+
+8 - Implement validation to ensure that task titles are not empty.
+=> yes task titles can not be empty. 
+
+9 - Ensure that users can't mark a task as complete if it's already marked as such.
+=> Yes, user can not mark completed task as complete if it's already marked as such.
+
+10 - Handle errors gracefully and provide meaningful error messages.
+=> All the error handled successfully.
+
+
+
+brief 
+
+
+I had used some dependency which are passport local mongoose local passport local mongoose and all like and I use passport js for user authentication and authorisation
+Firstly  I created an register route by which user can register a their self and after that I created and login route
+so let's move to our main routes which is create task in this I just take the information from the user by which task will create
+I used the supporting database which is userTask and linked with the user model and I can just create the task when the task is creating I am passing the task ID in the users taskID attribute in schema of usermodel
+OK so the next route is alltask where user can see the all of the task which is created by the user .. so I just fetch that task which is created by the user from the attribute task ID in the user model
+the next route is edit task where I am just taking the information from the user which is ID (mandatory) and all of the things which user wants to change like title description and task
+ok so in this I handle the error like if you didn't provide that title or any of the field is undefined so i just response as msg to re enter it and also the feature is like a user only want to change the title so they can just give the title name and leave the other keys value empty
+and after that router we will have the delete route in which I just take the ID only and then find that task and removed
+next route is complete where I am taking the ID of that task and checking the status that it is completed or not if it is already marked completed so I am just response a message to the user that it is completed and if it is not then I am just updating its status
+next route is /fetch/completed where I am just fetching the completed task by the keyword status which is created which is created in the usertask database
+
+
+that's all about the app in short summary
